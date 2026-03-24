@@ -17,11 +17,11 @@ public class ModItems {
     // 基础物品 - 能量核心（用于放置的方块）
     public static final Item ENERGY_CORE = registerBlockItem("energy_core", ModBlocks.ENERGY_CORE);
     
-    // Rare 物品 - 能量剑
-    public static final Item ENERGY_SWORD = registerItem("energy_sword", new Item(new Item.Settings().maxCount(1).rarity(Rarity.RARE)));
+    // Rare 物品 - 能量剑（需要激活才能发挥威力）
+    public static final Item ENERGY_SWORD = registerItem("energy_sword", new EnergySwordItem());
     
-    // Epic 物品 - 能量胸甲
-    public static final Item ENERGY_CHESTPLATE = registerItem("energy_chestplate", new Item(new Item.Settings().maxCount(1).rarity(Rarity.EPIC)));
+    // Epic 物品 - 能量胸甲（需要激活才能发挥全部效果）
+    public static final Item ENERGY_CHESTPLATE = registerItem("energy_chestplate", new EnergyChestplateItem());
 
     // 创建自定义创造模式标签页
     public static final ItemGroup NUTON_GROUP = Registry.register(

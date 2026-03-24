@@ -29,6 +29,20 @@ public class EnergyCoreBlock extends Block {
         builder.add(ACTIVATED);
     }
     
-    // Minecraft 1.21 中使用 onUse 的替代方法
-    // 暂时不实现右键功能，先保证能编译运行
+    @Override
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        if (!world.isClient) {
+            // 切换激活状态
+            boolean isActivated = state.get(ACTIVATED);
+            world.setBlockState(pos, state.with(ACTIVATED, !isActivated));
+            
+            // 播放音效
+            world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.BLOCKS, 0.5f, 1.0f);
+            
+            // 发送提示信息
+            String status = !isActivated ? "§b§l⚡ 能量核心已激活！" : "§7§o能量核心已关闭";
+            player.sendMessage(net.minecraft.text.Text.literal(status), true);
+        }
+        return ActionResult.SUCCESS;
+    }
 }
