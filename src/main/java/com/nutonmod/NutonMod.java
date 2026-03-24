@@ -1,5 +1,6 @@
 package com.nutonmod;
 
+import com.nutonmod.block.ModBlocks;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -20,7 +21,8 @@ public class NutonMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-		ModItems.registerModItems();
+		ModBlocks.registerModBlocks(); // 注册方块
+		ModItems.registerModItems();   // 注册物品
 		LOGGER.info("Hello Fabric world!");
 	}
 }

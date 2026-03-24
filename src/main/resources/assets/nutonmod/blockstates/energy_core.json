@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "activated=false": {
+      "model": "nutonmod:block/energy_core"
+    },
+    "activated=true": {
+      "model": "nutonmod:block/energy_core"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 {
-  "item.nutonmod.nuton_item": "noton 物品",
-  "item.nutonmod.rare_nuton_item": "稀有 noton 物品",
-  "item.nutonmod.epic_nuton_item": "史诗 noton 物品"
+  "item.nutonmod.energy_core": "能量核心",
+  "item.nutonmod.energy_sword": "能量剑",
+  "item.nutonmod.energy_chestplate": "能量胸甲",
+  "itemGroup.nutonmod.nuton_group": "Noton 模组"
 }

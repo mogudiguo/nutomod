@@ -1,5 +1,6 @@
 {
-  "item.nutonmod.nuton_item": "Nuton Item",
-  "item.nutonmod.rare_nuton_item": "Rare Nuton Item",
-  "item.nutonmod.epic_nuton_item": "Epic Nuton Item"
+  "item.nutonmod.energy_core": "Energy Core",
+  "item.nutonmod.energy_sword": "Energy Sword",
+  "item.nutonmod.energy_chestplate": "Energy Chestplate",
+  "itemGroup.nutonmod.nuton_group": "Noton Mod"
 }
