@@ -13,14 +13,20 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 		super(output, registriesFuture);
 	}
 
+	/**
+	 * 配置
+	 *
+	 * @param arg 参数
+	 */
 	@Override
-	protected void configure(RegistryWrapper.WrapperLookup arg) {
+	public void configure(RegistryWrapper.WrapperLookup arg) {
 		// 可开采标签
 		getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-			.add(ModBlocks.ENERGY_CORE);
+				.add(ModBlocks.ENERGY_CORE)
+				.add(ModBlocks.ENERGY_BLOCK);
 		
 		getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-			.add(ModBlocks.ENERGY_CORE);
+				.add(ModBlocks.ENERGY_CORE);
 		
 		// 其他方块标签可以在这里添加
 	}

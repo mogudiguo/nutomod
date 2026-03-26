@@ -14,7 +14,7 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 	}
 
 	@Override
-	protected void configure(RegistryWrapper.WrapperLookup arg) {
+	public void configure(RegistryWrapper.WrapperLookup arg) {
 		// 剑标签
 		getOrCreateTagBuilder(ItemTags.SWORDS)
 			.add(ModItems.ENERGY_SWORD);

@@ -16,6 +16,9 @@ public class ModItems {
     // 基础物品 - 能量核心（用于放置的方块）
     public static final Item ENERGY_CORE = registerBlockItem("energy_core", ModBlocks.ENERGY_CORE);
     
+    // 基础物品 - 能量方块（用于放置的方块）
+    public static final Item ENERGY_BLOCK = registerBlockItem("energy_block", ModBlocks.ENERGY_BLOCK);
+    
     // Rare 物品 - 能量剑（需要激活才能发挥威力）
     public static final Item ENERGY_SWORD = registerItem("energy_sword", new EnergySwordItem());
     
@@ -54,6 +57,6 @@ public class ModItems {
     
     public static void registerModItems() {
          NutonMod.LOGGER.info("Registering Mod Items for " + NutonMod.MOD_ID);
-         NutonMod.LOGGER.info("Registered: energy_core (block), energy_sword, energy_chestplate, energy_helmet, energy_leggings, energy_boots, energy_being_spawn_egg");
+         NutonMod.LOGGER.info("Registered: energy_core (block), energy_block (block), energy_sword, energy_chestplate, energy_helmet, energy_leggings, energy_boots, energy_being_spawn_egg");
     }
 }

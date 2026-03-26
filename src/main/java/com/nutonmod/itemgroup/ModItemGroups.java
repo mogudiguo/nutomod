@@ -22,9 +22,8 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_SWORD);
                 entries.add(ModItems.ENERGY_CHESTPLATE);
                 entries.add(ModItems.ENERGY_HELMET);
-                // TODO: 添加护腿和靴子
-                // entries.add(ModItems.ENERGY_LEGGINGS);
-                // entries.add(ModItems.ENERGY_BOOTS);
+                entries.add(ModItems.ENERGY_LEGGINGS);
+                entries.add(ModItems.ENERGY_BOOTS);
                 entries.add(ModItems.ENERGY_BEING_SPAWN_EGG);
             })
             .build()

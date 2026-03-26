@@ -1,0 +1,13 @@
+// 1.21	2026-03-26T23:58:10.86346	NutonMod/Model Definitions
+d80b609a9f92202973571083e7f0b197c68fa676 assets\nutonmod\models\item\energy_helmet.json
+a181443e6fcd7be88a4752ed7b0cf0d0ae8bf058 assets\nutonmod\models\item\energy_block.json
+8c730521ed962dfa7c3d0d2244fde962afe2ead2 assets\nutonmod\models\item\energy_leggings.json
+c207461e16ba24e0b75e61357b8f4b50e2f80cfc assets\nutonmod\blockstates\energy_core.json
+dd763d8777d2d2368221c47b6c3361da140c332a assets\nutonmod\models\block\energy_core.json
+50f1e22d5f39bca496ca693d75b5576f0e9b1371 assets\nutonmod\models\block\energy_block.json
+360442912cab507208232f3fd63603df312b47c9 assets\nutonmod\models\item\energy_core.json
+59f9c75c5ad58d95b8a5cb12fb99a26dd40dc7b9 assets\nutonmod\models\item\energy_chestplate.json
+847826941e18755e09fc60b3cabadf00c816cad5 assets\nutonmod\models\item\energy_being_spawn_egg.json
+3edaf15d8be33a5a4a4ef3c2dd6d2537646fcd61 assets\nutonmod\models\item\energy_sword.json
+03619289053edb4652fc2994f15177b639d0de04 assets\nutonmod\models\item\energy_boots.json
+311e88867655b37e5b32a48ca64552697b88741c assets\nutonmod\blockstates\energy_block.json
