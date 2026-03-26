@@ -1,8 +1,15 @@
 package com.nutonmod;
 
 import com.nutonmod.block.ModBlocks;
+import com.nutonmod.entity.ModEntities;
+import com.nutonmod.item.EnergyChestplateItem;
 import com.nutonmod.item.ModItems;
+import com.nutonmod.item.ModItemGroups;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ItemStack;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +30,22 @@ public class NutonMod implements ModInitializer {
 		// Proceed with mild caution.
 		ModBlocks.registerModBlocks(); // 注册方块
 		ModItems.registerModItems();   // 注册物品
+		ModItemGroups.registerItemGroups(); // 注册物品组
+		ModEntities.register();        // 注册实体
+		
+		// 注册服务器 tick 事件，用于处理能量胸甲的效果
+		ServerTickEvents.END_SERVER_TICK.register(server -> {
+			for (PlayerEntity player : server.getPlayerManager().getPlayerList()) {
+				if (player != null && !player.getWorld().isClient) {
+					// 检查玩家是否穿着能量胸甲
+					ItemStack chestplate = player.getEquippedStack(net.minecraft.entity.EquipmentSlot.CHEST);
+					if (chestplate.getItem() instanceof EnergyChestplateItem) {
+						((EnergyChestplateItem) chestplate.getItem()).clientTick(chestplate, player);
+					}
+				}
+			}
+		});
+		
 		LOGGER.info("Hello Fabric world!");
 	}
 }

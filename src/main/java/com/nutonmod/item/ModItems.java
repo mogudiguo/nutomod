@@ -2,15 +2,14 @@ package com.nutonmod.item;
 
 import com.nutonmod.NutonMod;
 import com.nutonmod.block.ModBlocks;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import com.nutonmod.entity.ModEntities;
 
 public class ModItems {
 
@@ -22,21 +21,26 @@ public class ModItems {
     
     // Epic 物品 - 能量胸甲（需要激活才能发挥全部效果）
     public static final Item ENERGY_CHESTPLATE = registerItem("energy_chestplate", new EnergyChestplateItem());
+    
+    // Epic 物品 - 能量头盔（需要激活才能发挥全部效果）
+    public static final Item ENERGY_HELMET = registerItem("energy_helmet", new EnergyHelmetItem());
+    
+    //能量裤子
+     public static final Item ENERGY_LEGGINGS = registerItem("energy_leggings", new EnergyLeggingsItem());
+    
+    //能量鞋子
+     public static final Item ENERGY_BOOTS = registerItem("energy_boots", new EnergyBootsItem());
 
-    // 创建自定义创造模式标签页
-    public static final ItemGroup NUTON_GROUP = Registry.register(
-        Registries.ITEM_GROUP,
-        Identifier.of(NutonMod.MOD_ID, "nuton_group"),
-        FabricItemGroup.builder()
-            .displayName(Text.literal("\u00a7bNoton 模组"))
-            .icon(() -> ENERGY_CORE.getDefaultStack())
-            .entries((context, entries) -> {
-                entries.add(ENERGY_CORE);
-                entries.add(ENERGY_SWORD);
-                entries.add(ENERGY_CHESTPLATE);
-            })
-            .build()
+    // 能量人生成蛋
+    public static final Item ENERGY_BEING_SPAWN_EGG = registerItem("energy_being_spawn_egg", 
+        new SpawnEggItem(
+            ModEntities.ENERGY_BEING,
+            0x00FFFF,  // 主颜色 - 青色
+            0xFFFFFF,  // 斑点颜色 - 白色
+            new Item.Settings()
+        )
     );
+
 
     private static Item registerItem(String id, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(NutonMod.MOD_ID, id), item);
@@ -50,6 +54,6 @@ public class ModItems {
     
     public static void registerModItems() {
          NutonMod.LOGGER.info("Registering Mod Items for " + NutonMod.MOD_ID);
-         NutonMod.LOGGER.info("Registered: energy_core (block), energy_sword, energy_chestplate");
+         NutonMod.LOGGER.info("Registered: energy_core (block), energy_sword, energy_chestplate, energy_helmet, energy_leggings, energy_boots, energy_being_spawn_egg");
     }
 }

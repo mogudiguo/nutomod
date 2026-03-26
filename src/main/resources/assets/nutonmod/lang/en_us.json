@@ -1,6 +1,11 @@
 {
   "item.nutonmod.energy_core": "Energy Core",
+  "block.nutonmod.energy_core": "Energy Core",
+  "block.nutonmod.energy_block": "Energy Block",
   "item.nutonmod.energy_sword": "Energy Sword",
   "item.nutonmod.energy_chestplate": "Energy Chestplate",
-  "itemGroup.nutonmod.nuton_group": "Noton Mod"
+  "item.nutonmod.energy_helmet": "Energy Helmet",
+  "itemGroup.nutonmod.nuton_group": "Noton Mod",
+  "item.nutonmod.energy_leggings": "Energy Leggings",
+  "item.nutonmod.energy_boots": "Energy Boots"
 }

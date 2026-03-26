@@ -53,6 +53,20 @@ public class EnergySwordItem extends SwordItem {
         }
     }
     
+    public void appendTooltip(ItemStack stack, List<Text> tooltip) {
+        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("\u00a7b\u00a7l⚔️ 能量剑").formatted(Formatting.AQUA, Formatting.BOLD));
+        tooltip.add(Text.literal("\u00a77 需要激活的能量核心才能发挥威力").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("\u00a7e● 激活时:").formatted(Formatting.YELLOW));
+        tooltip.add(Text.literal("   - 伤害：14 点 ⭐⭐⭐⭐⭐").formatted(Formatting.GREEN));
+        tooltip.add(Text.literal("   - 蓝色粒子特效").formatted(Formatting.DARK_PURPLE));
+        tooltip.add(Text.literal("\u00a7c● 未激活:").formatted(Formatting.RED));
+        tooltip.add(Text.literal("   - 伤害：7 点 ⭐").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("\u00a7d● 检测范围：5 格").formatted(Formatting.LIGHT_PURPLE));
+        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+    }
+    
     /**
      * 检查附近是否有激活的能量核心
      */

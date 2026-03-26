@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nutonmod:item/rare_nuton_item"
+    "layer0": "nutonmod:item/energy_helmet"
   }
 }
