@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "energy_core",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "nutonmod:energy_block"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "nutonmod:energy_core"
+  }
+}
