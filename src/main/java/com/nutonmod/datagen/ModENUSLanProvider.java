@@ -27,6 +27,10 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.holy_boots", "Holy Boots");
         translationBuilder.add("item.nutonmod.energy_apple", "Energy Apple");
         translationBuilder.add("item.nutonmod.energy_potato", "Energy Potato");
+        translationBuilder.add("item.nutonmod.anthracite", "Anthracite");
+        translationBuilder.add("item.nutonmod.anthracite_block", "Anthracite Block");
+
+
 
 
 

@@ -27,7 +27,6 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_LEGGINGS);
                 entries.add(ModItems.ENERGY_BOOTS);
                 entries.add(ModItems.ENERGY_BEING_SPAWN_EGG);
-                entries.add(Items.DIAMOND);
                 entries.add(ModBlocks.ENERGY_BLOCK.asItem());
                 entries.add(ModItems.HOLY_HELMET);
                 entries.add(ModItems.HOLY_CHESTPLATE);
@@ -35,6 +34,8 @@ public class ModItemGroups {
                 entries.add(ModItems.HOLY_BOOTS);
                 entries.add(ModItems.ENERGY_APPLE);
                 entries.add(ModItems.ENERGY_POTATO);
+                entries.add(ModItems.ANTHRACITE);
+                entries.add(ModBlocks.ANTHRACITE_BLOCK);
 
             })
             .build()

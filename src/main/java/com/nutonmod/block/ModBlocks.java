@@ -22,6 +22,11 @@ public class ModBlocks {
             .requiresTool()
             .strength(3.0f, 6.0f)));
 
+    // 无烟煤块 - 由 9 个无烟煤合成，可反向分解
+    public static final Block ANTHRACITE_BLOCK = register("anthracite_block", new Block(AbstractBlock.Settings.create()
+            .requiresTool()
+            .strength(5.0f, 6.0f))); // 比石头更硬
+
 
     private static <T extends Block> T register(String id, T block) {
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);
@@ -32,6 +37,6 @@ public class ModBlocks {
     
     public static void registerModBlocks() {
         NutonMod.LOGGER.info("Registering Mod Blocks for " + NutonMod.MOD_ID);
-        NutonMod.LOGGER.info("Registered: energy_core (可激活方块)");
+        NutonMod.LOGGER.info("Registered: energy_core (可激活方块), energy_block, anthracite_block");
     }
 }

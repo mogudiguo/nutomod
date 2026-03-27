@@ -7,6 +7,7 @@ import com.nutonmod.item.ModItems;
 import com.nutonmod.item.ModItemGroups;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
@@ -33,6 +34,10 @@ public class NutonMod implements ModInitializer {
 		ModItemGroups.registerItemGroups(); // 注册物品组
 		ModEntities.register();        // 注册实体
 		
+		// 使用 Fabric API 添加熔炉燃料
+		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600); // 无烟煤：80 秒
+		FuelRegistry.INSTANCE.add(ModBlocks.ANTHRACITE_BLOCK.asItem(), 14400); // 无烟煤块：720 秒（9 倍）
+
 		// 注册服务器 tick 事件，用于处理能量胸甲的效果
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			for (PlayerEntity player : server.getPlayerManager().getPlayerList()) {

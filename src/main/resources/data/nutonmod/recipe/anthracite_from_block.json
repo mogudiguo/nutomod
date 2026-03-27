@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "nutonmod:anthracite_block"
+    }
+  ],
+  "result": {
+    "id": "nutonmod:anthracite",
+    "count": 9
+  }
+}
