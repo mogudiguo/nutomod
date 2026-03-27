@@ -7,5 +7,9 @@
   "item.nutonmod.energy_helmet": "能量头盔",
   "itemGroup.nutonmod.nuton_group": "Noton 模组",
   "item.nutonmod.energy_leggings": "能量护腿",
-  "item.nutonmod.energy_boots": "能量靴子"
+  "item.nutonmod.energy_boots": "能量靴子",
+  "item.nutonmod.holy_helmet": "光明头盔",
+  "item.nutonmod.holy_chestplate": "光明胸甲",
+  "item.nutonmod.holy_leggings": "光明护腿",
+  "item.nutonmod.holy_boots": "光明靴子"
 }

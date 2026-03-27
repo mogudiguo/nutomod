@@ -1,6 +1,9 @@
 package com.nutonmod;
 
-import com.nutonmod.datagen.*;
+import com.nutonmod.datagen.ModENUSLanProvider;
+import com.nutonmod.datagen.ModLootTableProvider;
+import com.nutonmod.datagen.ModModelsProvider;
+import com.nutonmod.datagen.ModRecipesProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -11,8 +14,6 @@ public class NutonModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelsProvider::new);
 		pack.addProvider(ModRecipesProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
-		pack.addProvider(ModBlockTagsProvider::new);
-		pack.addProvider(ModItemTagsProvider::new);
 		pack.addProvider(ModENUSLanProvider::new);
 
 	}

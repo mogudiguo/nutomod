@@ -29,6 +29,11 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_BEING_SPAWN_EGG);
                 entries.add(Items.DIAMOND);
                 entries.add(ModBlocks.ENERGY_BLOCK.asItem());
+                entries.add(ModItems.HOLY_HELMET);
+                entries.add(ModItems.HOLY_CHESTPLATE);
+                entries.add(ModItems.HOLY_LEGGINGS);
+                entries.add(ModItems.HOLY_BOOTS);
+
             })
             .build()
     );

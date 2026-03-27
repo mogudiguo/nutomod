@@ -6,5 +6,9 @@
   "item.nutonmod.energy_core": "Energy Core",
   "item.nutonmod.energy_helmet": "Energy Helmet",
   "item.nutonmod.energy_leggings": "Energy Leggings",
-  "item.nutonmod.energy_sword": "Energy Sword"
+  "item.nutonmod.energy_sword": "Energy Sword",
+  "item.nutonmod.holy_boots": "Holy Boots",
+  "item.nutonmod.holy_chestplate": "Holy Chestplate",
+  "item.nutonmod.holy_helmet": "Holy Helmet",
+  "item.nutonmod.holy_leggings": "Holy Leggings"
 }

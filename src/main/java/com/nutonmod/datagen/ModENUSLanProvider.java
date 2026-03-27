@@ -21,6 +21,10 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_sword", "Energy Sword");
         translationBuilder.add("item.nutonmod.energy_chestplate", "Energy Chestplate");
         translationBuilder.add("item.nutonmod.energy_being_spawn_egg", "Energy Being Spawn Egg");
+        translationBuilder.add("item.nutonmod.holy_helmet", "Holy Helmet");
+        translationBuilder.add("item.nutonmod.holy_chestplate", "Holy Chestplate");
+        translationBuilder.add("item.nutonmod.holy_leggings", "Holy Leggings");
+        translationBuilder.add("item.nutonmod.holy_boots", "Holy Boots");
 
 
     }

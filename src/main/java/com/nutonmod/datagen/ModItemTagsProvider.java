@@ -31,13 +31,26 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 				
 		getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
 			.add(ModItems.ENERGY_BOOTS);
+
+		getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+			.add(ModItems.HOLY_HELMET);
+		getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+			.add(ModItems.ENERGY_CHESTPLATE);
+		getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+			 .add(ModItems.ENERGY_LEGGINGS);
+		getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+			 .add(ModItems.ENERGY_BOOTS);
 				
 		// 可锻造的护甲（可以使用锻造模板）
 		getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-			.add(ModItems.ENERGY_CHESTPLATE)
-			.add(ModItems.ENERGY_HELMET)
-			.add(ModItems.ENERGY_LEGGINGS)
-			.add(ModItems.ENERGY_BOOTS);
+				.add(ModItems.ENERGY_CHESTPLATE)
+				.add(ModItems.ENERGY_HELMET)
+				.add(ModItems.ENERGY_LEGGINGS)
+				.add(ModItems.ENERGY_BOOTS)
+				.add(ModItems.HOLY_HELMET)
+				.add(ModItems.HOLY_CHESTPLATE)
+				.add(ModItems.HOLY_LEGGINGS)
+				.add(ModItems.HOLY_BOOTS);
 
 		
 		// 其他物品标签可以在这里添加

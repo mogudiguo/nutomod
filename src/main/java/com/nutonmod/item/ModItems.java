@@ -1,7 +1,9 @@
 package com.nutonmod.item;
 
 import com.nutonmod.NutonMod;
+import com.nutonmod.armor.EnergyArmor;
 import com.nutonmod.block.ModBlocks;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
@@ -23,16 +25,22 @@ public class ModItems {
     public static final Item ENERGY_SWORD = registerItem("energy_sword", new EnergySwordItem());
     
     // Epic 物品 - 能量胸甲（需要激活才能发挥全部效果）
-    public static final Item ENERGY_CHESTPLATE = registerItem("energy_chestplate", new EnergyChestplateItem());
+    public static final Item ENERGY_CHESTPLATE = registerItem("energy_chestplate", EnergyArmor.createChestplate());
     
     // Epic 物品 - 能量头盔（需要激活才能发挥全部效果）
-    public static final Item ENERGY_HELMET = registerItem("energy_helmet", new EnergyHelmetItem());
+    public static final Item ENERGY_HELMET = registerItem("energy_helmet", EnergyArmor.createHelmet());
     
     //能量裤子
-     public static final Item ENERGY_LEGGINGS = registerItem("energy_leggings", new EnergyLeggingsItem());
+    public static final Item ENERGY_LEGGINGS = registerItem("energy_leggings", EnergyArmor.createLeggings());
     
     //能量鞋子
-     public static final Item ENERGY_BOOTS = registerItem("energy_boots", new EnergyBootsItem());
+    public static final Item ENERGY_BOOTS = registerItem("energy_boots", EnergyArmor.createBoots());
+
+    // 光明套装 - 神圣能量
+    public static final Item HOLY_HELMET = registerItem("holy_helmet", new HolyHelmetItem());
+    public static final Item HOLY_CHESTPLATE = registerItem("holy_chestplate", new HolyChestplateItem());
+    public static final Item HOLY_LEGGINGS = registerItem("holy_leggings", new HolyLeggingsItem());
+    public static final Item HOLY_BOOTS = registerItem("holy_boots", new HolyBootsItem());
 
     // 能量人生成蛋
     public static final Item ENERGY_BEING_SPAWN_EGG = registerItem("energy_being_spawn_egg", 
@@ -57,6 +65,6 @@ public class ModItems {
     
     public static void registerModItems() {
          NutonMod.LOGGER.info("Registering Mod Items for " + NutonMod.MOD_ID);
-         NutonMod.LOGGER.info("Registered: energy_core (block), energy_block (block), energy_sword, energy_chestplate, energy_helmet, energy_leggings, energy_boots, energy_being_spawn_egg");
+         NutonMod.LOGGER.info("Registered: energy_core (block), energy_block (block), energy_sword, energy_chestplate, energy_helmet, energy_leggings, energy_boots, holy_helmet, holy_chestplate, holy_leggings, holy_boots, energy_being_spawn_egg");
     }
 }

@@ -4,9 +4,8 @@ import com.nutonmod.block.EnergyCoreBlock;
 import com.nutonmod.block.ModBlocks;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -17,35 +16,39 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class EnergyHelmetItem extends BaseElementArmor {
+/**
+ * 光明头盔 - 神圣能量套装
+ * 克制亡灵生物，提供神圣保护
+ */
+public class HolyHelmetItem extends BaseElementArmor {
     
-    public EnergyHelmetItem() {
+    public HolyHelmetItem() {
         super(ArmorMaterials.NETHERITE, Type.HELMET, new Settings()
             .maxDamage(1638)
             .rarity(Rarity.EPIC)
             .fireproof());
     }
     
-    // 当玩家戴着头盔时，每 tick 检测一次附近是否有激活的能量核心
+    @Override
     public void clientTick(ItemStack stack, PlayerEntity player) {
         if (!player.getWorld().isClient) {
             // 检查附近是否有激活的能量核心（8 格范围）
             if (isNearActivatedCore(player.getWorld(), player.getBlockPos())) {
-                // 激活状态：提供增益效果（每 5 秒一次）
+                // 激活状态：提供神圣增益
                 if (player.age % 100 == 0) {
-                    // 1. 夜视效果
+                    // 1. 夜视效果（永恒光明）
                     player.addStatusEffect(new StatusEffectInstance(
                         StatusEffects.NIGHT_VISION, 
-                        220, // 持续 11 秒
-                        0,   // 等级 I
+                        220,
+                        0,
                         false, false, true
                     ));
                     
                     // 2. 生命恢复 I
                     player.addStatusEffect(new StatusEffectInstance(
                         StatusEffects.REGENERATION, 
-                        100, // 持续 5 秒
-                        0,   // 等级 I
+                        100,
+                        0,
                         false, false, true
                     ));
                 }
@@ -53,20 +56,38 @@ public class EnergyHelmetItem extends BaseElementArmor {
         }
     }
     
-    public void appendTooltip(ItemStack stack, List<Text> tooltip) {
-        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("§5§l⛑️ 能量头盔").formatted(Formatting.DARK_PURPLE, Formatting.BOLD));
-        tooltip.add(Text.literal("§7 需要激活的能量核心才能发挥全部效果").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("§e● 基础属性:").formatted(Formatting.YELLOW));
-        tooltip.add(Text.literal("   - 护甲值：4 点（下界合金级别）").formatted(Formatting.GREEN));
-        tooltip.add(Text.literal("   - 耐久度：1638（钻石的 3.5 倍）").formatted(Formatting.GREEN));
-        tooltip.add(Text.literal("   - 防火、防爆炸").formatted(Formatting.GREEN));
-        tooltip.add(Text.literal("§b● 激活时效果:").formatted(Formatting.AQUA));
-        tooltip.add(Text.literal("   - 👁️ 夜视效果（黑暗可视）").formatted(Formatting.DARK_GRAY));
-        tooltip.add(Text.literal("   - ❤️ 生命恢复 I（缓慢回血）").formatted(Formatting.RED));
-        tooltip.add(Text.literal("§d● 检测范围：8 格").formatted(Formatting.LIGHT_PURPLE));
-        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+    /**
+     * 对亡灵生物造成伤害加成
+     */
+    public float getAttackDamage(PlayerEntity player, float baseDamage) {
+        if (isNearActivatedCore(player.getWorld(), player.getBlockPos())) {
+            // 检查周围 10 格内是否有亡灵生物
+            List<MobEntity> nearbyMobs = player.getWorld().getEntitiesByClass(
+                MobEntity.class,
+                player.getBoundingBox().expand(10.0),
+                entity -> isUndeadMob(entity)
+            );
+            
+            if (!nearbyMobs.isEmpty()) {
+                return baseDamage + 5.0f; // 对亡灵额外伤害
+            }
+        }
+        return baseDamage;
+    }
+    
+    /**
+     * 判断是否为亡灵生物
+     */
+    private boolean isUndeadMob(MobEntity entity) {
+        String entityType = entity.getType().toString();
+        return entityType.contains("skeleton") ||
+               entityType.contains("zombie") ||
+               entityType.contains("wither") ||
+               entityType.contains("phantom") ||
+               entityType.contains("drowned") ||
+               entityType.contains("husk") ||
+               entityType.contains("stray") ||
+               entityType.contains("zoglin");
     }
     
     /**
