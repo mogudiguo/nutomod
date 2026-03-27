@@ -1,5 +1,14 @@
 {
   "block.nutonmod.energy_block": "Energy Block",
+  "block.nutonmod.energy_button": "Energy Button",
+  "block.nutonmod.energy_door": "Energy Door",
+  "block.nutonmod.energy_fence": "Energy Fence",
+  "block.nutonmod.energy_fence_gate": "Energy Fence Gate",
+  "block.nutonmod.energy_pressure_plate": "Energy Pressure Plate",
+  "block.nutonmod.energy_slab": "Energy Slab",
+  "block.nutonmod.energy_stairs": "Energy Stairs",
+  "block.nutonmod.energy_trapdoor": "Energy Trapdoor",
+  "block.nutonmod.energy_wall": "Energy Wall",
   "item.nutonmod.anthracite": "Anthracite",
   "item.nutonmod.anthracite_block": "Anthracite Block",
   "item.nutonmod.energy_apple": "Energy Apple",
@@ -14,5 +23,6 @@
   "item.nutonmod.holy_boots": "Holy Boots",
   "item.nutonmod.holy_chestplate": "Holy Chestplate",
   "item.nutonmod.holy_helmet": "Holy Helmet",
-  "item.nutonmod.holy_leggings": "Holy Leggings"
+  "item.nutonmod.holy_leggings": "Holy Leggings",
+  "item.nutonmod.prospector": "Prospector"
 }

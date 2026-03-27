@@ -1,5 +1,9 @@
 package com.nutonmod.armor;
 
+import com.nutonmod.item.EnergyBootsItem;
+import com.nutonmod.item.EnergyChestplateItem;
+import com.nutonmod.item.EnergyHelmetItem;
+import com.nutonmod.item.EnergyLeggingsItem;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -39,28 +43,28 @@ public class EnergyArmor extends AbstractElementArmor {
     /**
      * 创建能量头盔
      */
-    public static ArmorItem createHelmet() {
-        return new ArmorItem(MATERIAL, ArmorItem.Type.HELMET, new ArmorItem.Settings());
+    public static EnergyHelmetItem createHelmet() {
+        return new EnergyHelmetItem();
     }
     
     /**
      * 创建能量胸甲
      */
-    public static ArmorItem createChestplate() {
-        return new ArmorItem(MATERIAL, ArmorItem.Type.CHESTPLATE, new ArmorItem.Settings());
+    public static EnergyChestplateItem createChestplate() {
+        return new EnergyChestplateItem();
     }
     
     /**
      * 创建能量护腿
      */
-    public static ArmorItem createLeggings() {
-        return new ArmorItem(MATERIAL, ArmorItem.Type.LEGGINGS, new ArmorItem.Settings());
+    public static EnergyLeggingsItem createLeggings() {
+        return new EnergyLeggingsItem();
     }
     
     /**
      * 创建能量靴子
      */
-    public static ArmorItem createBoots() {
-        return new ArmorItem(MATERIAL, ArmorItem.Type.BOOTS, new ArmorItem.Settings());
+    public static EnergyBootsItem createBoots() {
+        return new EnergyBootsItem();
     }
 }

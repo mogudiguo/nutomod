@@ -9,6 +9,8 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
@@ -53,20 +55,30 @@ public class EnergyHelmetItem extends BaseElementArmor {
         }
     }
     
-    public void appendTooltip(ItemStack stack, List<Text> tooltip) {
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        addTooltipLines(tooltip);
+    }
+    
+    private void addTooltipLines(List<Text> tooltip) {
         tooltip.add(Text.literal("").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("§5§l⛑️ 能量头盔").formatted(Formatting.DARK_PURPLE, Formatting.BOLD));
         tooltip.add(Text.literal("§7 需要激活的能量核心才能发挥全部效果").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("§e● 基础属性:").formatted(Formatting.YELLOW));
-        tooltip.add(Text.literal("   - 护甲值：4 点（下界合金级别）").formatted(Formatting.GREEN));
-        tooltip.add(Text.literal("   - 耐久度：1638（钻石的 3.5 倍）").formatted(Formatting.GREEN));
-        tooltip.add(Text.literal("   - 防火、防爆炸").formatted(Formatting.GREEN));
-        tooltip.add(Text.literal("§b● 激活时效果:").formatted(Formatting.AQUA));
-        tooltip.add(Text.literal("   - 👁️ 夜视效果（黑暗可视）").formatted(Formatting.DARK_GRAY));
-        tooltip.add(Text.literal("   - ❤️ 生命恢复 I（缓慢回血）").formatted(Formatting.RED));
-        tooltip.add(Text.literal("§d● 检测范围：8 格").formatted(Formatting.LIGHT_PURPLE));
-        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+        
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal("§e● 基础属性:").formatted(Formatting.YELLOW));
+            tooltip.add(Text.literal("   - 护甲值：4 点").formatted(Formatting.GREEN));
+            tooltip.add(Text.literal("   - 耐久度：1638").formatted(Formatting.GREEN));
+            tooltip.add(Text.literal("   - 防火、防爆炸").formatted(Formatting.GREEN));
+            tooltip.add(Text.literal("§b● 激活时效果:").formatted(Formatting.AQUA));
+            tooltip.add(Text.literal("   - 👁️ 夜视效果").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.literal("   - ❤️ 生命恢复 I").formatted(Formatting.RED));
+            tooltip.add(Text.literal("§d● 检测范围：8 格").formatted(Formatting.LIGHT_PURPLE));
+            tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+        } else {
+            tooltip.add(Text.literal("§7 按 §eShift§7 查看详细信息 §r").formatted(Formatting.GRAY, Formatting.ITALIC));
+        }
     }
     
     /**

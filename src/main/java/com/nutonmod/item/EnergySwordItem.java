@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
@@ -52,8 +53,10 @@ public class EnergySwordItem extends SwordItem {
             return false;
         }
     }
-    
-    public void appendTooltip(ItemStack stack, List<Text> tooltip) {
+
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.literal("").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("\u00a7b\u00a7l⚔️ 能量剑").formatted(Formatting.AQUA, Formatting.BOLD));
         tooltip.add(Text.literal("\u00a77 需要激活的能量核心才能发挥威力").formatted(Formatting.GRAY));

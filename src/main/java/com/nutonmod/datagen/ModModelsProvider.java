@@ -1,5 +1,6 @@
 package com.nutonmod.datagen;
 
+import com.nutonmod.block.ModBlockFamilies;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -7,6 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.data.family.BlockFamily;
 
 public class ModModelsProvider extends FabricModelProvider {
     public ModModelsProvider(FabricDataOutput output) {
@@ -15,9 +17,11 @@ public class ModModelsProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_BLOCK);
-        // 能量核心的方块状态模型在 resources 中手动配置
-        // blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_CORE);
+        ModBlockFamilies.getBlockFamilies()
+                .filter(BlockFamily::shouldGenerateModels)
+                .forEach(blockFamily -> 
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(blockFamily.getBaseBlock())
+                        .family(blockFamily));
     }
 
     @Override

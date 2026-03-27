@@ -3,6 +3,9 @@ package com.nutonmod.item;
 import com.nutonmod.NutonMod;
 import com.nutonmod.armor.EnergyArmor;
 import com.nutonmod.block.ModBlocks;
+import com.nutonmod.entity.ModEntities;
+import com.nutonmod.item.custom.EnergyAppleItem;
+import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.Prospector;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
@@ -44,8 +47,8 @@ public class ModItems {
     public static final Item HOLY_BOOTS = registerItem("holy_boots", new HolyBootsItem());
 
     //食物物品
-    public static final Item ENERGY_APPLE = registerItem("energy_apple", new Item(new Item.Settings().food(ModFoodComponents.ENERGY_APPLE)));
-    public static final Item ENERGY_POTATO = registerItem("energy_potato", new Item(new Item.Settings().food(ModFoodComponents.ENERGY_POTATO)));
+    public static final Item ENERGY_APPLE = registerItem("energy_apple", new EnergyAppleItem());
+    public static final Item ENERGY_POTATO = registerItem("energy_potato", new EnergyPotatoItem());
 
 
     public static final Item ANTHRACITE = registerItem("anthracite", new Item(new Item.Settings()));

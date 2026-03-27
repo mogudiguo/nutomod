@@ -26,7 +26,6 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_HELMET);
                 entries.add(ModItems.ENERGY_LEGGINGS);
                 entries.add(ModItems.ENERGY_BOOTS);
-                entries.add(ModItems.ENERGY_BEING_SPAWN_EGG);
                 entries.add(ModBlocks.ENERGY_BLOCK.asItem());
                 entries.add(ModItems.HOLY_HELMET);
                 entries.add(ModItems.HOLY_CHESTPLATE);
@@ -37,6 +36,18 @@ public class ModItemGroups {
                 entries.add(ModItems.ANTHRACITE);
                 entries.add(ModBlocks.ANTHRACITE_BLOCK);
                 entries.add(ModItems.PROSPECTOR);
+
+                entries.add(ModBlocks.ENERGY_STAIRS);
+                entries.add(ModBlocks.ENERGY_SLAB);
+                entries.add(ModBlocks.ENERGY_BUTTON);
+                entries.add(ModBlocks.ENERGY_PRESSURE_PLATE);
+                entries.add(ModBlocks.ENERGY_FENCE);
+                entries.add(ModBlocks.ENERGY_FENCE_GATE);
+                entries.add(ModBlocks.ENERGY_WALL);
+                entries.add(ModBlocks.ENERGY_DOOR);
+                entries.add(ModBlocks.ENERGY_TRAPDOOR);
+
+
 
             })
             .build()

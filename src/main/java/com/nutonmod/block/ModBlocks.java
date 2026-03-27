@@ -1,8 +1,7 @@
 package com.nutonmod.block;
 
 import com.nutonmod.NutonMod;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -17,7 +16,7 @@ public class ModBlocks {
             .strength(3.0f, 6.0f)  // 硬度 3.0，爆炸抗性 6.0（类似石头）
             .luminance(state -> state.get(EnergyCoreBlock.ACTIVATED) ? 15 : 0))); // 激活时发光等级 15
 
-    //能量方块
+    // 能量方块
     public static final Block ENERGY_BLOCK = register("energy_block", new Block(AbstractBlock.Settings.create()
             .requiresTool()
             .strength(3.0f, 6.0f)));
@@ -26,6 +25,34 @@ public class ModBlocks {
     public static final Block ANTHRACITE_BLOCK = register("anthracite_block", new Block(AbstractBlock.Settings.create()
             .requiresTool()
             .strength(5.0f, 6.0f))); // 比石头更硬
+
+    // 能量楼梯
+    public static final Block ENERGY_STAIRS = register("energy_stairs",
+            new StairsBlock(ENERGY_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+    // 能量半砖
+    public static final Block ENERGY_SLAB = register("energy_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+    //能量按钮
+    public static final Block ENERGY_BUTTON = register("energy_button",
+            new ButtonBlock(BlockSetType.OAK,10, AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+    //能量压力板
+    public static final Block ENERGY_PRESSURE_PLATE = register("energy_pressure_plate",
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+    // 能量栅栏
+    public static final Block ENERGY_FENCE = register("energy_fence",
+            new FenceBlock(AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+    // 能量栅栏门
+    public static final Block ENERGY_FENCE_GATE = register("energy_fence_gate",
+            new FenceGateBlock(WoodType.OAK,AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+    //能量墙
+    public static final Block ENERGY_WALL = register("energy_wall",
+            new WallBlock(AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+    // 能量门
+    public static final Block ENERGY_DOOR = register("energy_door",
+            new DoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+    // 能量活板门
+    public static final Block ENERGY_TRAPDOOR = register("energy_trapdoor",
+            new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(ENERGY_BLOCK)));
 
 
     private static <T extends Block> T register(String id, T block) {

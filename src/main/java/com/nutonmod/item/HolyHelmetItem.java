@@ -2,6 +2,7 @@ package com.nutonmod.item;
 
 import com.nutonmod.block.EnergyCoreBlock;
 import com.nutonmod.block.ModBlocks;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
@@ -10,11 +11,14 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
@@ -147,5 +151,33 @@ public class HolyHelmetItem extends BaseElementArmor {
             }
         }
         return false;
+    }
+    
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        addTooltipLines(tooltip);
+    }
+    
+    private void addTooltipLines(List<Text> tooltip) {
+        tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("§5§l⛑️ 光明头盔").formatted(Formatting.DARK_PURPLE, Formatting.BOLD));
+        tooltip.add(Text.literal("§7 神圣能量套装，克制亡灵生物").formatted(Formatting.GRAY));
+        
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal("§e● 基础属性:").formatted(Formatting.YELLOW));
+            tooltip.add(Text.literal("   - 护甲值：4 点").formatted(Formatting.GREEN));
+            tooltip.add(Text.literal("   - 耐久度：1638").formatted(Formatting.GREEN));
+            tooltip.add(Text.literal("   - 防火、防爆炸").formatted(Formatting.GREEN));
+            tooltip.add(Text.literal("§b● 激活时效果:").formatted(Formatting.AQUA));
+            tooltip.add(Text.literal("   - 👁️ 夜视效果").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.literal("   - ❤️ 生命恢复 I").formatted(Formatting.RED));
+            tooltip.add(Text.literal("⚔️ ● 特殊能力:").formatted(Formatting.RED));
+            tooltip.add(Text.literal("   - 对亡灵生物额外 +5 伤害").formatted(Formatting.GOLD));
+            tooltip.add(Text.literal("§d● 检测范围：8 格").formatted(Formatting.LIGHT_PURPLE));
+            tooltip.add(Text.literal("").formatted(Formatting.GRAY));
+        } else {
+            tooltip.add(Text.literal("§7 按 §eShift§7 查看详细信息 §r").formatted(Formatting.GRAY, Formatting.ITALIC));
+        }
     }
 }

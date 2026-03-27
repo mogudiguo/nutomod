@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModENUSLanProvider extends FabricLanguageProvider {
     public ModENUSLanProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
+        super(dataOutput, "en_us", registryLookup);
     }
 
     @Override
@@ -29,7 +29,17 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_potato", "Energy Potato");
         translationBuilder.add("item.nutonmod.anthracite", "Anthracite");
         translationBuilder.add("item.nutonmod.anthracite_block", "Anthracite Block");
+        translationBuilder.add("item.nutonmod.prospector", "Prospector");
 
+        translationBuilder.add("block.nutonmod.energy_stairs", "Energy Stairs");
+        translationBuilder.add("block.nutonmod.energy_slab", "Energy Slab");
+        translationBuilder.add("block.nutonmod.energy_button", "Energy Button");
+        translationBuilder.add("block.nutonmod.energy_pressure_plate", "Energy Pressure Plate");
+        translationBuilder.add("block.nutonmod.energy_fence", "Energy Fence");
+        translationBuilder.add("block.nutonmod.energy_fence_gate", "Energy Fence Gate");
+        translationBuilder.add("block.nutonmod.energy_wall", "Energy Wall");
+        translationBuilder.add("block.nutonmod.energy_door", "Energy Door");
+        translationBuilder.add("block.nutonmod.energy_trapdoor", "Energy Trapdoor");
 
 
 
