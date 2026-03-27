@@ -1,16 +1,18 @@
-// 1.21	2026-03-27T14:46:42.1224824	NutonMod/Model Definitions
-be10a9b5dbda7640fbf89e11fcad45d6a08fa872 assets\nutonmod\models\item\holy_leggings.json
+// 1.21	2026-03-27T17:50:41.2106527	NutonMod/Model Definitions
 d80b609a9f92202973571083e7f0b197c68fa676 assets\nutonmod\models\item\energy_helmet.json
+be10a9b5dbda7640fbf89e11fcad45d6a08fa872 assets\nutonmod\models\item\holy_leggings.json
 a181443e6fcd7be88a4752ed7b0cf0d0ae8bf058 assets\nutonmod\models\item\energy_block.json
 8c730521ed962dfa7c3d0d2244fde962afe2ead2 assets\nutonmod\models\item\energy_leggings.json
 c07ef3fcd12a27305cb031e53dd4e74f05274237 assets\nutonmod\models\item\holy_helmet.json
-50f1e22d5f39bca496ca693d75b5576f0e9b1371 assets\nutonmod\models\block\energy_block.json
 57c2bdc8203d08fd23f85f5a86a5627c75d6d70e assets\nutonmod\models\item\energy_potato.json
+50f1e22d5f39bca496ca693d75b5576f0e9b1371 assets\nutonmod\models\block\energy_block.json
 59f9c75c5ad58d95b8a5cb12fb99a26dd40dc7b9 assets\nutonmod\models\item\energy_chestplate.json
 847826941e18755e09fc60b3cabadf00c816cad5 assets\nutonmod\models\item\energy_being_spawn_egg.json
+702c73e08aae1f24cd43150208160b4e777530c7 assets\nutonmod\models\item\anthracite.json
 3edaf15d8be33a5a4a4ef3c2dd6d2537646fcd61 assets\nutonmod\models\item\energy_sword.json
-03619289053edb4652fc2994f15177b639d0de04 assets\nutonmod\models\item\energy_boots.json
 0193d5d5c08f74b02ae6c953c21be602820d7bb7 assets\nutonmod\models\item\energy_apple.json
+03619289053edb4652fc2994f15177b639d0de04 assets\nutonmod\models\item\energy_boots.json
+be7ad2c60a3d1083decbc5e444b4837f198dbc56 assets\nutonmod\models\item\prospector.json
 3c1c5f3c723b3d10061b25e6630df46d1e09f3d9 assets\nutonmod\models\item\holy_boots.json
 311e88867655b37e5b32a48ca64552697b88741c assets\nutonmod\blockstates\energy_block.json
 eb3976aae30fd58dc5c8a4c990d852210219177a assets\nutonmod\models\item\holy_chestplate.json

@@ -1,7 +1,7 @@
 package com.nutonmod.item.custom;
 
+import com.nutonmod.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -41,7 +41,13 @@ public class Prospector extends Item {
 
                         if (isRightBlock(blockState)) {
                             String name = blockState.getBlock().getName().getString();
-                            player.sendMessage(Text.literal("§a 发现矿藏：" + name + "§r"), true);
+                            
+                            // 聊天框显示详细信息（可历史记录）
+                            player.sendMessage(Text.literal("§a§l探矿器报告：§r发现 §6" + name + "§r"), true);
+                            
+                            // ActionBar 显示简洁提示（醒目）
+                            player.sendMessage(Text.literal("§e§l⚠ 发现矿藏！§r"), false);
+                            
                             foundBlock = true;
                             break;
                         }
@@ -58,7 +64,13 @@ public class Prospector extends Item {
 
                 if (isRightBlock(blockState)) {
                     String name = blockState.getBlock().getName().getString();
-                    player.sendMessage(Text.literal("§a 发现矿藏：" + name + "§r"), true);
+                    
+                    // 聊天框显示详细信息
+                    player.sendMessage(Text.literal("§a§l探矿器报告：§r精确位置发现 §6" + name + "§r"), true);
+                    
+                    // ActionBar 显示提示
+                    player.sendMessage(Text.literal("§b§l⬇ 正下方有矿！§r"), false);
+                    
                     foundBlock = true;
                     break;
                 }
@@ -66,7 +78,8 @@ public class Prospector extends Item {
         }
 
         if (!foundBlock) {
-            player.sendMessage(Text.literal("§c 未发现任何矿藏§r"), true);
+            // 只在聊天框显示未找到消息
+            player.sendMessage(Text.literal("§7§l探矿器扫描完成§r - §c未发现任何矿藏§r"), true);
         }
 
         // 损坏工具
@@ -76,13 +89,7 @@ public class Prospector extends Item {
     }
 
     private boolean isRightBlock(BlockState blockState) {
-        return blockState.isOf(Blocks.DIAMOND_ORE) || 
-               blockState.isOf(Blocks.IRON_ORE) ||
-               blockState.isOf(Blocks.GOLD_ORE) ||
-               blockState.isOf(Blocks.COAL_ORE) ||
-               blockState.isOf(Blocks.REDSTONE_ORE) ||
-               blockState.isOf(Blocks.LAPIS_ORE) ||
-               blockState.isOf(Blocks.EMERALD_ORE) ||
-               blockState.isOf(Blocks.COPPER_ORE);
+        // 使用标签系统判断是否为可探测矿石
+        return blockState.isIn(ModBlockTags.PROSPECTOR_ORES);
     }
 }
