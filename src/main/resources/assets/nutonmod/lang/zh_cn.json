@@ -15,5 +15,6 @@
   "item.nutonmod.energy_apple": "能量苹果",
   "item.nutonmod.energy_potato": "能量马铃薯",
   "item.nutonmod.anthracite": "无烟煤",
-  "block.nutonmod.anthracite_block": "无烟煤块"
+  "block.nutonmod.anthracite_block": "无烟煤块",
+  "item.nutonmod.prospector": "探矿器"
 }

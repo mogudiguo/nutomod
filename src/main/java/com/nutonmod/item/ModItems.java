@@ -3,6 +3,7 @@ package com.nutonmod.item;
 import com.nutonmod.NutonMod;
 import com.nutonmod.armor.EnergyArmor;
 import com.nutonmod.block.ModBlocks;
+import com.nutonmod.item.custom.Prospector;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -59,6 +60,8 @@ public class ModItems {
             new Item.Settings()
         )
     );
+
+    public static final Item PROSPECTOR = registerItem("prospector", new Prospector(new Item.Settings().maxDamage(127)));
 
 
     private static Item registerItem(String id, Item item) {

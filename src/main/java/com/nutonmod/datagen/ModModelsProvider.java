@@ -35,6 +35,7 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ENERGY_APPLE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_POTATO, Models.GENERATED);
         itemModelGenerator.register(ModItems.ANTHRACITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PROSPECTOR, Models.GENERATED);
 
     }
 }

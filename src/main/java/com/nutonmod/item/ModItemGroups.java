@@ -36,6 +36,7 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_POTATO);
                 entries.add(ModItems.ANTHRACITE);
                 entries.add(ModBlocks.ANTHRACITE_BLOCK);
+                entries.add(ModItems.PROSPECTOR);
 
             })
             .build()
