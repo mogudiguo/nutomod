@@ -16,7 +16,8 @@ public class ModModelsProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_CORE);
+        // 能量核心的方块状态模型在 resources 中手动配置
+        // blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_CORE);
     }
 
     @Override
