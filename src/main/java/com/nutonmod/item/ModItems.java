@@ -42,6 +42,10 @@ public class ModItems {
     public static final Item HOLY_LEGGINGS = registerItem("holy_leggings", new HolyLeggingsItem());
     public static final Item HOLY_BOOTS = registerItem("holy_boots", new HolyBootsItem());
 
+    //食物物品
+    public static final Item ENERGY_APPLE = registerItem("energy_apple", new Item(new Item.Settings().food(ModFoodComponents.ENERGY_APPLE)));
+    public static final Item ENERGY_POTATO = registerItem("energy_potato", new Item(new Item.Settings().food(ModFoodComponents.ENERGY_POTATO)));
+
     // 能量人生成蛋
     public static final Item ENERGY_BEING_SPAWN_EGG = registerItem("energy_being_spawn_egg", 
         new SpawnEggItem(

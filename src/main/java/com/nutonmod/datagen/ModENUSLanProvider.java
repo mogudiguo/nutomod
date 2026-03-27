@@ -25,6 +25,9 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.holy_chestplate", "Holy Chestplate");
         translationBuilder.add("item.nutonmod.holy_leggings", "Holy Leggings");
         translationBuilder.add("item.nutonmod.holy_boots", "Holy Boots");
+        translationBuilder.add("item.nutonmod.energy_apple", "Energy Apple");
+        translationBuilder.add("item.nutonmod.energy_potato", "Energy Potato");
+
 
 
     }

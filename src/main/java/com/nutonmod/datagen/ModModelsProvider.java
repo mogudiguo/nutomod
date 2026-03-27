@@ -32,6 +32,8 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HOLY_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.HOLY_LEGGINGS, Models.GENERATED);
         itemModelGenerator.register(ModItems.HOLY_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ENERGY_APPLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ENERGY_POTATO, Models.GENERATED);
         // 能量核心和能量方块不注册物品模型，使用方块模型作为物品形式
     }
 }

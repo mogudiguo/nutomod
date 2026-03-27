@@ -33,6 +33,8 @@ public class ModItemGroups {
                 entries.add(ModItems.HOLY_CHESTPLATE);
                 entries.add(ModItems.HOLY_LEGGINGS);
                 entries.add(ModItems.HOLY_BOOTS);
+                entries.add(ModItems.ENERGY_APPLE);
+                entries.add(ModItems.ENERGY_POTATO);
 
             })
             .build()
