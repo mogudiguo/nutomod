@@ -5,14 +5,21 @@ import com.nutonmod.block.ModBlocks;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorMaterials;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.EnumMap;
 import java.util.List;
 
 /**
@@ -22,7 +29,7 @@ import java.util.List;
 public class HolyBootsItem extends BaseElementArmor {
     
     public HolyBootsItem() {
-        super(ArmorMaterials.NETHERITE, Type.BOOTS, new Settings()
+        super(HolyHelmetItem.HOLY_MATERIAL, Type.BOOTS, new Settings()
             .maxDamage(1456)
             .rarity(Rarity.EPIC)
             .fireproof());

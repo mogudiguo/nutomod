@@ -6,14 +6,21 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorMaterials;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.EnumMap;
 import java.util.List;
 
 /**
@@ -22,11 +29,44 @@ import java.util.List;
  */
 public class HolyHelmetItem extends BaseElementArmor {
     
+    // 光明盔甲材料（自定义）
+    public static final RegistryEntry<ArmorMaterial> HOLY_MATERIAL = createHolyMaterial();
+    
     public HolyHelmetItem() {
-        super(ArmorMaterials.NETHERITE, Type.HELMET, new Settings()
+        super(HOLY_MATERIAL, Type.HELMET, new Settings()
             .maxDamage(1638)
             .rarity(Rarity.EPIC)
             .fireproof());
+    }
+    
+    /**
+     * 创建光明盔甲材料
+     */
+    private static RegistryEntry<ArmorMaterial> createHolyMaterial() {
+        EnumMap<ArmorItem.Type, Integer> defense = new EnumMap<>(ArmorItem.Type.class);
+        defense.put(ArmorItem.Type.BOOTS, 4);
+        defense.put(ArmorItem.Type.LEGGINGS, 7);
+        defense.put(ArmorItem.Type.CHESTPLATE, 9);
+        defense.put(ArmorItem.Type.HELMET, 4);
+        defense.put(ArmorItem.Type.BODY, 11);
+        
+        List<ArmorMaterial.Layer> layers = List.of(
+            new ArmorMaterial.Layer(Identifier.of("nutonmod", "holy"))
+        );
+        
+        return Registry.registerReference(
+            Registries.ARMOR_MATERIAL,
+            Identifier.of("nutonmod", "holy"),
+            new ArmorMaterial(
+                defense,
+                9,  // 附魔能力
+                SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+                () -> Ingredient.ofItems(Items.DIAMOND),
+                layers,
+                3.0f,  // 韧性
+                0.1f   // 击退抗性
+            )
+        );
     }
     
     @Override

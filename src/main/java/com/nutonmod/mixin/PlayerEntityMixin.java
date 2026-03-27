@@ -12,8 +12,8 @@ public abstract class PlayerEntityMixin {
 
     @ModifyVariable(
         method = "attack",
-        at = @At("HEAD"),
-        argsOnly = true
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;getPos()Lnet/minecraft/util/math/Vec3d;", ordinal = 0),
+        require = 0
     )
     public float modifyAttackDamage(float baseDamage) {
         PlayerEntity player = (PlayerEntity) (Object) this;
