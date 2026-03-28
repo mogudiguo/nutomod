@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "nutonmod:block/energy_door_bottom",
+    "top": "nutonmod:block/energy_door_top"
+  }
+}

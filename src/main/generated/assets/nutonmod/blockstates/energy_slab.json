@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nutonmod:block/energy_slab"
+    },
+    "type=double": {
+      "model": "nutonmod:block/energy_block"
+    },
+    "type=top": {
+      "model": "nutonmod:block/energy_slab_top"
+    }
+  }
+}
