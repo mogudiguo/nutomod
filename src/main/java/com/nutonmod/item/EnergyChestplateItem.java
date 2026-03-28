@@ -1,5 +1,6 @@
 package com.nutonmod.item;
 
+import com.nutonmod.armor.EnergyArmor;
 import com.nutonmod.block.EnergyCoreBlock;
 import com.nutonmod.block.ModBlocks;
 import net.minecraft.client.gui.screen.Screen;
@@ -20,10 +21,14 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class EnergyChestplateItem extends BaseElementArmor {
-    
+public class EnergyChestplateItem extends BaseElementArmor{
+
+    /**
+     * 能量胸板
+     *
+     */
     public EnergyChestplateItem() {
-        super(ArmorMaterials.NETHERITE, Type.CHESTPLATE, new Settings()
+        super(ArmorMaterials.NETHERITE, Type.CHESTPLATE, new Item.Settings()
             .maxDamage(2048)
             .rarity(Rarity.EPIC)
             .fireproof());
@@ -65,7 +70,7 @@ public class EnergyChestplateItem extends BaseElementArmor {
     }
     
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
         addTooltipLines(tooltip);
     }
     

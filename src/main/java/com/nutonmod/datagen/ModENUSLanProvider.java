@@ -18,7 +18,6 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_leggings", "Energy Leggings");
         translationBuilder.add("item.nutonmod.energy_boots", "Energy Boots");
         translationBuilder.add("block.nutonmod.energy_block", "Energy Block");
-        translationBuilder.add("item.nutonmod.energy_sword", "Energy Sword");
         translationBuilder.add("item.nutonmod.energy_chestplate", "Energy Chestplate");
         translationBuilder.add("item.nutonmod.energy_being_spawn_egg", "Energy Being Spawn Egg");
         translationBuilder.add("item.nutonmod.holy_helmet", "Holy Helmet");
@@ -40,6 +39,14 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.energy_wall", "Energy Wall");
         translationBuilder.add("block.nutonmod.energy_door", "Energy Door");
         translationBuilder.add("block.nutonmod.energy_trapdoor", "Energy Trapdoor");
+
+        translationBuilder.add("item.nutonmod.energy_sword", "Energy Sword");
+        translationBuilder.add("item.nutonmod.energy_pickaxe", "Energy Pickaxe");
+        translationBuilder.add("item.nutonmod.energy_axe", "Energy Axe");
+        translationBuilder.add("item.nutonmod.energy_shovel", "Energy Shovel");
+        translationBuilder.add("item.nutonmod.energy_hoe", "Energy Hoe");
+        translationBuilder.add("item.nutonmod.energy_ingot", "Energy Ingot");
+
 
 
 

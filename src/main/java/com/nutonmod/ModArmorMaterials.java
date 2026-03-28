@@ -20,13 +20,13 @@ import java.util.function.Supplier;
 
 public class ModArmorMaterials {
 
-    public static final RegistryEntry<ArmorMaterial> ENERGY = register("energy", Util.make(new EnumMap(ArmorItem.Type.class), map -> {
+    public static final RegistryEntry<ArmorMaterial> ENERGY_INGOT = register("energy_ingot", Util.make(new EnumMap(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 4);
         map.put(ArmorItem.Type.LEGGINGS, 7);
         map.put(ArmorItem.Type.CHESTPLATE, 9);
         map.put(ArmorItem.Type.HELMET, 4);
         map.put(ArmorItem.Type.BODY, 11);
-    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.ofItems(Items.DIAMOND));
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.ofItems(ModItems.ENERGY_INGOT));
 
 
     private static RegistryEntry<ArmorMaterial> register(

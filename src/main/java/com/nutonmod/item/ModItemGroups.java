@@ -21,7 +21,6 @@ public class ModItemGroups {
             .icon(() -> ModItems.ENERGY_CORE.getDefaultStack())
             .entries((context, entries) -> {
                 entries.add(ModItems.ENERGY_CORE);
-                entries.add(ModItems.ENERGY_SWORD);
                 entries.add(ModItems.ENERGY_CHESTPLATE);
                 entries.add(ModItems.ENERGY_HELMET);
                 entries.add(ModItems.ENERGY_LEGGINGS);
@@ -46,6 +45,14 @@ public class ModItemGroups {
                 entries.add(ModBlocks.ENERGY_WALL);
                 entries.add(ModBlocks.ENERGY_DOOR);
                 entries.add(ModBlocks.ENERGY_TRAPDOOR);
+
+                entries.add(ModItems.ENERGY_INGOT);
+                entries.add(ModItems.ENERGY_SWORD);
+                entries.add(ModItems.ENERGY_PICKAXE);
+                entries.add(ModItems.ENERGY_AXE);
+                entries.add(ModItems.ENERGY_SHOVEL);
+                entries.add(ModItems.ENERGY_HOE);
+
 
 
 

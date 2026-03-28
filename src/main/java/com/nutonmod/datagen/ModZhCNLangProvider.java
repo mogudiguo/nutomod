@@ -16,7 +16,6 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_core", "能量核心");
         translationBuilder.add("block.nutonmod.energy_core", "能量核心");
         translationBuilder.add("block.nutonmod.energy_block", "能量方块");
-        translationBuilder.add("item.nutonmod.energy_sword", "能量剑");
         translationBuilder.add("item.nutonmod.energy_chestplate", "能量胸甲");
         translationBuilder.add("item.nutonmod.energy_helmet", "能量头盔");
         translationBuilder.add("item.nutonmod.energy_leggings", "能量护腿");
@@ -41,6 +40,13 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.energy_wall", "能量墙");
         translationBuilder.add("block.nutonmod.energy_door", "能量门");
         translationBuilder.add("block.nutonmod.energy_trapdoor", "能量活板门");
+
+        translationBuilder.add("item.nutonmod.energy_pickaxe", "能量镐");
+        translationBuilder.add("item.nutonmod.energy_axe", "能量斧");
+        translationBuilder.add("item.nutonmod.energy_shovel", "能量铲");
+        translationBuilder.add("item.nutonmod.energy_hoe", "能量锄");
+        translationBuilder.add("item.nutonmod.energy_sword", "能量剑");
+        translationBuilder.add("item.nutonmod.energy_ingot", "能量锭");
 
 
     }

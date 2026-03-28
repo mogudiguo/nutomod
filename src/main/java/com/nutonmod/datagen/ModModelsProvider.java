@@ -9,6 +9,7 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.item.ArmorItem;
 
 public class ModModelsProvider extends FabricModelProvider {
     public ModModelsProvider(FabricDataOutput output) {
@@ -26,12 +27,13 @@ public class ModModelsProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.ENERGY_SWORD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ENERGY_CHESTPLATE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ENERGY_HELMET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ENERGY_LEGGINGS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ENERGY_BOOTS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ENERGY_BEING_SPAWN_EGG, Models.GENERATED);
+
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGY_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGY_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGY_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGY_BOOTS);
+
+
         itemModelGenerator.register(ModItems.HOLY_HELMET, Models.GENERATED);
         itemModelGenerator.register(ModItems.HOLY_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.HOLY_LEGGINGS, Models.GENERATED);
@@ -40,6 +42,15 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ENERGY_POTATO, Models.GENERATED);
         itemModelGenerator.register(ModItems.ANTHRACITE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PROSPECTOR, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.ENERGY_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ENERGY_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ENERGY_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ENERGY_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ENERGY_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ENERGY_HOE, Models.GENERATED);
+
+
 
     }
 }

@@ -7,10 +7,7 @@ import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.custom.EnergyAppleItem;
 import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.Prospector;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -24,20 +21,33 @@ public class ModItems {
     
     // 基础物品 - 能量方块（用于放置的方块）
     public static final Item ENERGY_BLOCK = registerBlockItem("energy_block", ModBlocks.ENERGY_BLOCK);
-    
-    // Rare 物品 - 能量剑（需要激活才能发挥威力）
-    public static final Item ENERGY_SWORD = registerItem("energy_sword", new EnergySwordItem());
-    
-    // Epic 物品 - 能量胸甲（需要激活才能发挥全部效果）
+
+    //能量锭
+    public static final Item ENERGY_INGOT = registerItem("energy_ingot", new Item(new Item.Settings()));
+
+
+    // 物品 - 能量工具（需要激活才能发挥威力）
+    public static final Item ENERGY_SWORD = registerItem("energy_sword", new SwordItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().fireproof().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 6, -2.4F))));
+    public static final Item ENERGY_PICKAXE = registerItem("energy_pickaxe", new PickaxeItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().fireproof().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 1.0F, -3.0F))));
+    public static final Item ENERGY_AXE = registerItem("energy_axe", new AxeItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().fireproof().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 5.0F, -2.8F))));
+    public static final Item ENERGY_SHOVEL = registerItem("energy_shovel", new ShovelItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().fireproof().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 1.5F, -2.0F))));
+    public static final Item ENERGY_HOE = registerItem("energy_hoe", new HoeItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().fireproof().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 0.0F, -0.1F))));
+
+
+    /**
+     * 能源chestplate
+     */// 能量胸甲（需要激活才能发挥全部效果）
     public static final Item ENERGY_CHESTPLATE = registerItem("energy_chestplate", EnergyArmor.createChestplate());
-    
-    // Epic 物品 - 能量头盔（需要激活才能发挥全部效果）
+    // 能量头盔（需要激活才能发挥全部效果）
     public static final Item ENERGY_HELMET = registerItem("energy_helmet", EnergyArmor.createHelmet());
-    
-    //能量裤子
+    // 能量裤子
     public static final Item ENERGY_LEGGINGS = registerItem("energy_leggings", EnergyArmor.createLeggings());
-    
-    //能量鞋子
+    // 能量鞋子
     public static final Item ENERGY_BOOTS = registerItem("energy_boots", EnergyArmor.createBoots());
 
     // 光明套装 - 神圣能量
