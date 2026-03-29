@@ -1,10 +1,14 @@
 package com.nutonmod.datagen;
 
 import com.nutonmod.block.ModBlocks;
+import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
-import net.minecraft.data.server.loottable.BlockLootTableGenerator;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -20,5 +24,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.ENERGY_BLOCK);
         addDrop(ModBlocks.ENERGY_CORE);
+        
+        // 能量马铃薯作物战利品表
+        addDrop(ModBlocks.ENERGY_POTATO_CROP, (block) -> 
+            LootTable.builder()
+                .pool(LootPool.builder()
+                    .with(ItemEntry.builder(ModItems.ENERGY_POTATO))
+                    .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)))));
     }
 }

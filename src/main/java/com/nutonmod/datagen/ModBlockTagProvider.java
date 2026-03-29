@@ -58,6 +58,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
             .add(ModBlocks.ENERGY_PRESSURE_PLATE);
 
+        getOrCreateTagBuilder(BlockTags.CROPS)
+            .add(ModBlocks.ENERGY_POTATO_CROP);
+
 
 
     }

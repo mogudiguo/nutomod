@@ -51,5 +51,6 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.hat", "帽子");
 
 
+        translationBuilder.add("block.nutonmod.energy_potato_crop", "能量马铃薯作物");
     }
 }

@@ -1,11 +1,14 @@
 package com.nutonmod.block;
 
 import com.nutonmod.NutonMod;
+import com.nutonmod.block.custom.EnergyPotatoCropBlock;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
@@ -53,6 +56,12 @@ public class ModBlocks {
     // 能量活板门
     public static final Block ENERGY_TRAPDOOR = register("energy_trapdoor",
             new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(ENERGY_BLOCK)));
+
+    public static final Block ENERGY_POTATO_CROP   = register("energy_potato_crop",
+            new EnergyPotatoCropBlock(AbstractBlock.Settings.copy(Blocks.POTATOES)
+            )
+    );
+
 
 
     private static <T extends Block> T register(String id, T block) {

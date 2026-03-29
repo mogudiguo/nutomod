@@ -1,3 +1,4 @@
-// 1.21	2026-03-29T12:04:45.4831808	NutonMod/Block Loot Tables
+// 1.21	2026-03-29T14:40:48.7732952	NutonMod/Block Loot Tables
 f54c3edddf8b6a2ef52e99d32f43313ff193f24a data\nutonmod\loot_table\blocks\energy_core.json
 f5537dca4218079beb7527585541350495a5fc94 data\nutonmod\loot_table\blocks\energy_block.json
+a3ade27c8bc885b5d8fdaffd4189c895bbf668bf data\nutonmod\loot_table\blocks\energy_potato_crop.json

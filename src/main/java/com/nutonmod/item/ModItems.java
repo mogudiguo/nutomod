@@ -53,18 +53,26 @@ public class ModItems {
     public static final Item ENERGY_BOOTS = registerItem("energy_boots", EnergyArmor.createBoots());
 
     // 光明套装 - 神圣能量
-    public static final Item HOLY_HELMET = registerItem("holy_helmet", new HolyHelmetItem());
-    public static final Item HOLY_CHESTPLATE = registerItem("holy_chestplate", new HolyChestplateItem());
-    public static final Item HOLY_LEGGINGS = registerItem("holy_leggings", new HolyLeggingsItem());
-    public static final Item HOLY_BOOTS = registerItem("holy_boots", new HolyBootsItem());
+    public static final Item HOLY_HELMET = registerItem("holy_helmet",
+            new HolyHelmetItem());
+    public static final Item HOLY_CHESTPLATE = registerItem("holy_chestplate",
+            new HolyChestplateItem());
+    public static final Item HOLY_LEGGINGS = registerItem("holy_leggings",
+            new HolyLeggingsItem());
+    public static final Item HOLY_BOOTS = registerItem("holy_boots",
+            new HolyBootsItem());
 
     //食物物品
-    public static final Item ENERGY_APPLE = registerItem("energy_apple", new EnergyAppleItem());
-    public static final Item ENERGY_POTATO = registerItem("energy_potato", new EnergyPotatoItem());
+    public static final Item ENERGY_APPLE = registerItem("energy_apple",
+            new EnergyAppleItem());
+    public static final Item ENERGY_POTATO = registerItem("energy_potato",
+            new EnergyPotatoItem());
 
 
-    public static final Item ANTHRACITE = registerItem("anthracite", new Item(new Item.Settings()));
-    public static final Item ANTHRACITE_BLOCK = registerBlockItem("anthracite_block", ModBlocks.ANTHRACITE_BLOCK);
+    public static final Item ANTHRACITE = registerItem("anthracite",
+            new Item(new Item.Settings()));
+    public static final Item ANTHRACITE_BLOCK = registerBlockItem("anthracite_block",
+            ModBlocks.ANTHRACITE_BLOCK);
 
     // 能量人生成蛋
     public static final Item ENERGY_BEING_SPAWN_EGG = registerItem("energy_being_spawn_egg", 
@@ -76,9 +84,12 @@ public class ModItems {
         )
     );
 
-    public static final Item PROSPECTOR = registerItem("prospector", new Prospector(new Item.Settings().maxDamage(127)));
+    public static final Item PROSPECTOR = registerItem("prospector",
+            new Prospector(new Item.Settings().maxDamage(127)));
     //帽子
-    public static final Item HAT = registerItem("hat", new HatItem(HatItem.Type.HAT, new Item.Settings().maxDamage(1638)));
+    public static final Item HAT = registerItem("hat", new HatItem(HatItem.Type.HAT,
+            new Item.Settings().maxDamage(1638)));
+
 
 
 

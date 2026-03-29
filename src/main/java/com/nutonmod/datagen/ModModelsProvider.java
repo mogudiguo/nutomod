@@ -5,11 +5,15 @@ import com.nutonmod.block.ModBlocks;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CropBlock;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.util.Identifier;
 
 public class ModModelsProvider extends FabricModelProvider {
     public ModModelsProvider(FabricDataOutput output) {
@@ -23,6 +27,9 @@ public class ModModelsProvider extends FabricModelProvider {
                 .forEach(blockFamily -> 
                     blockStateModelGenerator.registerCubeAllModelTexturePool(blockFamily.getBaseBlock())
                         .family(blockFamily));
+
+        // 4 个生长阶段
+        blockStateModelGenerator.registerCrop(ModBlocks.ENERGY_POTATO_CROP, CropBlock.AGE, 0, 1, 2, 3);
     }
 
     @Override

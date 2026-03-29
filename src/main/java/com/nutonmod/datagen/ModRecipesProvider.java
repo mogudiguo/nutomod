@@ -31,5 +31,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(recipeExporter,
             RecipeCategory.MISC, ModItems.ANTHRACITE,             // 9 个无烟煤
             RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANTHRACITE_BLOCK);  // 1 个无烟煤块
+        
+
     }
 }

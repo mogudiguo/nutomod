@@ -49,6 +49,8 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
 
         translationBuilder.add("item.nutonmod.hat", "Hat");
 
+        translationBuilder.add("block.nutonmod.energy_potato_crop", "Energy Potato Crop");
+
 
 
 
