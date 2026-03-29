@@ -5,6 +5,7 @@ import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.EnergyChestplateItem;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.item.ModItemGroups;
+import com.nutonmod.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -33,6 +34,7 @@ public class NutonMod implements ModInitializer {
 		ModItems.registerModItems();   // 注册物品
 		ModItemGroups.registerItemGroups(); // 注册物品组
 		ModEntities.register();        // 注册实体
+		ModLootTableModifiers.modifyLootTable();
 		
 		// 使用 Fabric API 添加熔炉燃料
 		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600); // 无烟煤：80 秒
