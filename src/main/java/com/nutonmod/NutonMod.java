@@ -7,6 +7,7 @@ import com.nutonmod.item.ModItems;
 import com.nutonmod.item.ModItemGroups;
 import com.nutonmod.util.ModCustomTrades;
 import com.nutonmod.util.ModLootTableModifiers;
+import com.nutonmod.villager.Modvillagers;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -37,6 +38,7 @@ public class NutonMod implements ModInitializer {
 		ModEntities.register();        // 注册实体
 		ModLootTableModifiers.modifyLootTable();
 		ModCustomTrades.registerModCustomTrades();
+		Modvillagers.registerVillagers(); // 注册村民及其职业
 		
 		// 使用 Fabric API 添加熔炉燃料
 		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600); // 无烟煤：80 秒

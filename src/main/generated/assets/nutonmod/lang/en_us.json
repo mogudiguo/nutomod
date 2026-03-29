@@ -11,6 +11,8 @@
   "block.nutonmod.energy_stairs": "Energy Stairs",
   "block.nutonmod.energy_trapdoor": "Energy Trapdoor",
   "block.nutonmod.energy_wall": "Energy Wall",
+  "entity.minecraft.villager.energy_master": "Energy Master",
+  "entity.minecraft.villager.nutonmod.energy_master": "Energy Master",
   "item.nutonmod.anthracite": "Anthracite",
   "item.nutonmod.anthracite_block": "Anthracite Block",
   "item.nutonmod.corn": "Corn",
