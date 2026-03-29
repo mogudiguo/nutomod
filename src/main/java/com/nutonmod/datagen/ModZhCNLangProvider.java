@@ -48,6 +48,8 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_sword", "能量剑");
         translationBuilder.add("item.nutonmod.energy_ingot", "能量锭");
 
+        translationBuilder.add("item.nutonmod.hat", "帽子");
+
 
     }
 }

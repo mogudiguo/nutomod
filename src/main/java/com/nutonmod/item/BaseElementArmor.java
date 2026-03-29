@@ -4,7 +4,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.Identifier;
 
 /**
  * 元素盔甲基类
@@ -45,7 +47,32 @@ public abstract class BaseElementArmor extends ArmorItem {
         ItemStack leggings = player.getInventory().getArmorStack(1);
         ItemStack boots = player.getInventory().getArmorStack(0);
         
-        return !helmet.isEmpty() && !chestplate.isEmpty() && 
-               !leggings.isEmpty() && !boots.isEmpty();
+        if (helmet.isEmpty() || chestplate.isEmpty() || leggings.isEmpty() || boots.isEmpty()) {
+            return false;
+        }
+        
+        // 检查所有盔甲是否都是同一类型（能量套或光明套）
+        String setType = getArmorSetType(helmet);
+        if (setType == null) {
+            return false;
+        }
+        
+        return setType.equals(getArmorSetType(chestplate)) &&
+               setType.equals(getArmorSetType(leggings)) &&
+               setType.equals(getArmorSetType(boots));
+    }
+    
+    private String getArmorSetType(ItemStack stack) {
+        Identifier id = Registries.ITEM.getId(stack.getItem());
+        if (id == null) {
+            return null;
+        }
+        String path = id.getPath();
+        if (path.contains("energy_")) {
+            return "energy";
+        } else if (path.contains("holy_")) {
+            return "holy";
+        }
+        return null;
     }
 }

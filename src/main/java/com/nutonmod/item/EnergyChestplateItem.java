@@ -37,33 +37,36 @@ public class EnergyChestplateItem extends BaseElementArmor{
     // 当玩家穿着胸甲时，每 tick 检测一次附近是否有激活的能量核心
     public void clientTick(ItemStack stack, PlayerEntity player) {
         if (!player.getWorld().isClient) {
-            // 检查附近是否有激活的能量核心（10 格范围）
-            if (isNearActivatedCore(player.getWorld(), player.getBlockPos())) {
-                // 激活状态：提供强大增益效果（每 5 秒一次）
-                if (player.age % 100 == 0) {
-                    // 1. 生命恢复 II
-                    player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.REGENERATION, 
-                        100, // 持续 5 秒
-                        1,   // 等级 II
-                        false, false, true
-                    ));
-                    
-                    // 2. 防火效果
-                    player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.FIRE_RESISTANCE, 
-                        220, // 持续 11 秒
-                        0, 
-                        false, false, true
-                    ));
-                    
-                    // 3. 速度提升 I
-                    player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.SPEED, 
-                        220, // 持续 11 秒
-                        0,   // 等级 I
-                        false, false, true
-                    ));
+            // 只有穿着全套能量盔甲时才激活效果
+            if (hasFullSet(player)) {
+                // 检查附近是否有激活的能量核心（10 格范围）
+                if (isNearActivatedCore(player.getWorld(), player.getBlockPos())) {
+                    // 激活状态：提供强大增益效果（每 5 秒一次）
+                    if (player.age % 100 == 0) {
+                        // 1. 生命恢复 II
+                        player.addStatusEffect(new StatusEffectInstance(
+                            StatusEffects.REGENERATION, 
+                            100, // 持续 5 秒
+                            1,   // 等级 II
+                            false, false, true
+                        ));
+                        
+                        // 2. 防火效果
+                        player.addStatusEffect(new StatusEffectInstance(
+                            StatusEffects.FIRE_RESISTANCE, 
+                            220, // 持续 11 秒
+                            0, 
+                            false, false, true
+                        ));
+                        
+                        // 3. 速度提升 I
+                        player.addStatusEffect(new StatusEffectInstance(
+                            StatusEffects.SPEED, 
+                            220, // 持续 11 秒
+                            0,   // 等级 I
+                            false, false, true
+                        ));
+                    }
                 }
             }
         }
@@ -85,7 +88,10 @@ public class EnergyChestplateItem extends BaseElementArmor{
             tooltip.add(Text.literal("   - 护甲值：8 点").formatted(Formatting.GREEN));
             tooltip.add(Text.literal("   - 耐久度：2048").formatted(Formatting.GREEN));
             tooltip.add(Text.literal("   - 防火、防爆炸").formatted(Formatting.GREEN));
-            tooltip.add(Text.literal("\u00a7b● 激活时效果:").formatted(Formatting.AQUA));
+            tooltip.add(Text.literal("\u00a7d● 套装效果:").formatted(Formatting.LIGHT_PURPLE));
+            tooltip.add(Text.literal("   - 需要穿着全套盔甲才能激活").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal("   - 需要能量核心激活状态").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal("\u00a7b● 全套激活时效果:").formatted(Formatting.AQUA));
             tooltip.add(Text.literal("   - ❤️ 生命恢复 II").formatted(Formatting.RED));
             tooltip.add(Text.literal("   - 🔥 防火效果").formatted(Formatting.DARK_RED));
             tooltip.add(Text.literal("   - 💨 速度提升 I").formatted(Formatting.GRAY));

@@ -53,6 +53,7 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_SHOVEL);
                 entries.add(ModItems.ENERGY_HOE);
 
+                entries.add(ModItems.HAT);
 
 
 

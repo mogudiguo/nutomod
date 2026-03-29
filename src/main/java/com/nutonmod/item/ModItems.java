@@ -1,11 +1,13 @@
 package com.nutonmod.item;
 
+import com.nutonmod.ModArmorMaterials;
 import com.nutonmod.NutonMod;
 import com.nutonmod.armor.EnergyArmor;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.custom.EnergyAppleItem;
 import com.nutonmod.item.custom.EnergyPotatoItem;
+import com.nutonmod.item.custom.HatItem;
 import com.nutonmod.item.custom.Prospector;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -75,6 +77,9 @@ public class ModItems {
     );
 
     public static final Item PROSPECTOR = registerItem("prospector", new Prospector(new Item.Settings().maxDamage(127)));
+    //帽子
+    public static final Item HAT = registerItem("hat", new HatItem(HatItem.Type.HAT, new Item.Settings().maxDamage(1638)));
+
 
 
     private static Item registerItem(String id, Item item) {

@@ -60,7 +60,7 @@ public class ModArmorMaterials {
 
         return Registry.registerReference(
                 Registries.ARMOR_MATERIAL,
-                Identifier.ofVanilla(id),
+                Identifier.of(NutonMod.MOD_ID, id),
                 new ArmorMaterial(enumMap, enchantability, equipSound, repairIngredient, layers, toughness, knockbackResistance)
         );
     }

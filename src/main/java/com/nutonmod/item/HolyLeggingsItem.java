@@ -42,25 +42,28 @@ public class HolyLeggingsItem extends BaseElementArmor {
     @Override
     public void clientTick(ItemStack stack, PlayerEntity player) {
         if (!player.getWorld().isClient) {
-            // 检查附近是否有激活的能量核心（9 格范围）
-            if (isNearActivatedCore(player.getWorld(), player.getBlockPos())) {
-                // 激活状态：提供神圣敏捷
-                if (player.age % 100 == 0) {
-                    // 1. 速度提升 II（神圣迅捷）
-                    player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.SPEED, 
-                        220,
-                        1,   // 等级 II
-                        false, false, true
-                    ));
-                    
-                    // 2. 生命恢复 I
-                    player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.REGENERATION, 
-                        100,
-                        0,
-                        false, false, true
-                    ));
+            // 只有穿着全套光明盔甲时才激活效果
+            if (hasFullSet(player)) {
+                // 检查附近是否有激活的能量核心（9 格范围）
+                if (isNearActivatedCore(player.getWorld(), player.getBlockPos())) {
+                    // 激活状态：提供神圣敏捷
+                    if (player.age % 100 == 0) {
+                        // 1. 速度提升 II（神圣迅捷）
+                        player.addStatusEffect(new StatusEffectInstance(
+                            StatusEffects.SPEED, 
+                            220,
+                            1,   // 等级 II
+                            false, false, true
+                        ));
+                        
+                        // 2. 生命恢复 I
+                        player.addStatusEffect(new StatusEffectInstance(
+                            StatusEffects.REGENERATION, 
+                            100,
+                            0,
+                            false, false, true
+                        ));
+                    }
                 }
             }
         }
@@ -101,7 +104,10 @@ public class HolyLeggingsItem extends BaseElementArmor {
             tooltip.add(Text.literal("   - 护甲值：7 点").formatted(Formatting.GREEN));
             tooltip.add(Text.literal("   - 耐久度：1876").formatted(Formatting.GREEN));
             tooltip.add(Text.literal("   - 防火、防爆炸").formatted(Formatting.GREEN));
-            tooltip.add(Text.literal("§b● 激活时效果:").formatted(Formatting.AQUA));
+            tooltip.add(Text.literal("§d● 套装效果:").formatted(Formatting.LIGHT_PURPLE));
+            tooltip.add(Text.literal("   - 需要穿着全套盔甲才能激活").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal("   - 需要能量核心激活状态").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal("§b● 全套激活时效果:").formatted(Formatting.AQUA));
             tooltip.add(Text.literal("   - 💨 速度提升 II").formatted(Formatting.GRAY));
             tooltip.add(Text.literal("   - ❤️ 生命恢复 I").formatted(Formatting.RED));
             tooltip.add(Text.literal("§d● 检测范围：9 格").formatted(Formatting.LIGHT_PURPLE));
