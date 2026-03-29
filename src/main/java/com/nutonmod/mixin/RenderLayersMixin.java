@@ -21,6 +21,7 @@ public class RenderLayersMixin {
     @Inject(method = "<clinit>", at = @At("RETURN"))
     private static void onBlockInit(CallbackInfo ci){
         BLOCKS.put(ModBlocks.ENERGY_POTATO_CROP, RenderLayer.getCutout());
+        BLOCKS.put(ModBlocks.CORN_CROP, RenderLayer.getCutout());
     }
 
 }

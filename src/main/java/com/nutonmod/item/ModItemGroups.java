@@ -55,6 +55,8 @@ public class ModItemGroups {
 
                 entries.add(ModItems.HAT);
 
+                entries.add(ModItems.CORN_SEEDS);
+                entries.add(ModItems.CORN);
 
 
             })

@@ -2,15 +2,15 @@ package com.nutonmod.datagen;
 
 import com.nutonmod.block.ModBlockFamilies;
 import com.nutonmod.block.ModBlocks;
+import com.nutonmod.block.custom.CornCropBlock;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
@@ -28,8 +28,29 @@ public class ModModelsProvider extends FabricModelProvider {
                     blockStateModelGenerator.registerCubeAllModelTexturePool(blockFamily.getBaseBlock())
                         .family(blockFamily));
 
-        // 4 个生长阶段
-        blockStateModelGenerator.registerCrop(ModBlocks.ENERGY_POTATO_CROP, CropBlock.AGE, 0, 1, 2, 3);
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.ENERGY_POTATO_CROP)
+                        .coordinate(BlockStateVariantMap.create(CropBlock.AGE)
+                        .register(stage -> BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(
+                                        ModBlocks.ENERGY_POTATO_CROP, "_stage" + stage, Models.CROSS, TextureMap::cross)
+                                )
+                        )
+            )
+        );
+        
+        // 玉米作物模型
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.CORN_CROP)
+                        .coordinate(BlockStateVariantMap.create(CornCropBlock.AGE)
+                        .register(stage -> BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(
+                                        ModBlocks.CORN_CROP, "_stage" + stage, Models.CROSS, TextureMap::cross)
+                                )
+                        )
+            )
+        );
     }
 
     @Override
@@ -56,6 +77,10 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ENERGY_SHOVEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_AXE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_HOE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.CORN_SEEDS, Models.GENERATED);
+
 
 
 

@@ -9,6 +9,7 @@ import com.nutonmod.item.custom.EnergyAppleItem;
 import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.HatItem;
 import com.nutonmod.item.custom.Prospector;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -89,7 +90,11 @@ public class ModItems {
     //帽子
     public static final Item HAT = registerItem("hat", new HatItem(HatItem.Type.HAT,
             new Item.Settings().maxDamage(1638)));
-
+    //玉米种子
+    public static final Item CORN_SEEDS = registerItem("corn_seeds",
+            new AliasedBlockItem(ModBlocks.CORN_CROP, new Item.Settings()));
+    public static final Item CORN = registerItem("corn",
+            new Item(new Item.Settings().food(ModFoodComponents.CORN)));
 
 
 

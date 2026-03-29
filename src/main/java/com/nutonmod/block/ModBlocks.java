@@ -1,6 +1,7 @@
 package com.nutonmod.block;
 
 import com.nutonmod.NutonMod;
+import com.nutonmod.block.custom.CornCropBlock;
 import com.nutonmod.block.custom.EnergyPotatoCropBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -57,11 +58,15 @@ public class ModBlocks {
     public static final Block ENERGY_TRAPDOOR = register("energy_trapdoor",
             new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(ENERGY_BLOCK)));
 
+    //能量土豆作物
     public static final Block ENERGY_POTATO_CROP   = register("energy_potato_crop",
             new EnergyPotatoCropBlock(AbstractBlock.Settings.copy(Blocks.POTATOES)
             )
     );
 
+    //玉米作物
+    public static final Block CORN_CROP = Registry.register(Registries.BLOCK,Identifier.of(NutonMod.MOD_ID, "corn_crop"),
+            new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
 
 
     private static <T extends Block> T register(String id, T block) {
