@@ -1,14 +1,19 @@
 package com.nutonmod;
 
+import com.nutonmod.block.ModBlocks;
 import com.nutonmod.entity.EnergyBeingRenderer;
 import com.nutonmod.entity.ModEntities;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.render.RenderLayer;
 
 public class NutonModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         // 注册能量人实体渲染器
         EntityRendererRegistry.register(ModEntities.ENERGY_BEING, EnergyBeingRenderer::new);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENERGY_POTATO_CROP, RenderLayer.getCutout());
     }
 }

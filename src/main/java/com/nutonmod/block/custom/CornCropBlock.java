@@ -2,19 +2,22 @@ package com.nutonmod.block.custom;
 
 import com.nutonmod.item.ModItems;
 import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import net.minecraft.world.BlockView;
-import org.apache.commons.compress.compressors.lz77support.LZ77Compressor;
-
-import java.security.Provider;
+import net.minecraft.world.event.GameEvent;
 
 
 public class CornCropBlock extends CropBlock {
@@ -99,5 +102,37 @@ public class CornCropBlock extends CropBlock {
                world.setBlockState(pos, this.withAge(age+1),Block.NOTIFY_ALL);
            }
         }
+    }
+
+    @Override
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        int age = this.getAge(state);
+        BlockPos basePos = pos;
+        BlockState baseState = state;
+        BlockState below = world.getBlockState(pos.down());
+        BlockState above = world.getBlockState(pos.up());
+
+        boolean isTop = age == this.getMaxAge() && below.isOf(this) && below.get(AGE) == FIRST_STAGE_AGE;
+        boolean isBottomMature = age == FIRST_STAGE_AGE && above.isOf(this) && above.get(AGE) == this.getMaxAge();
+
+        if (isTop) {
+            basePos = pos.down();
+            baseState = below;
+        }
+
+        if (isTop || isBottomMature || age == this.getMaxAge()) {
+            if (!world.isClient) {
+                Block.dropStacks(this.withAge(this.getMaxAge()), world, basePos, null, player, player.getMainHandStack());
+                world.setBlockState(basePos, this.withAge(0), Block.NOTIFY_ALL);
+                if (world.getBlockState(basePos.up()).isOf(this)) {
+                    world.setBlockState(basePos.up(), Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
+                }
+                world.playSound(null, basePos, SoundEvents.BLOCK_CROP_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                world.emitGameEvent(GameEvent.BLOCK_DESTROY, basePos, GameEvent.Emitter.of(player, baseState));
+            }
+            return ActionResult.SUCCESS;
+        }
+
+        return super.onUse(state, world, pos, player, hit);
     }
 }

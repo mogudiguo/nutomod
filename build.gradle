@@ -46,9 +46,18 @@ dependencies {
 
 processResources {
 	inputs.property "version", project.version
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
 	filesMatching("fabric.mod.json") {
 		expand "version": inputs.properties.version
+	}
+}
+
+sourceSets {
+	main {
+		resources {
+			srcDirs = ["src/main/resources", "src/main/generated"]
+		}
 	}
 }
 
